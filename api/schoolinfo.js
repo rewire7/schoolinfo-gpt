@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     });
   }
 
-  const url = `https://www.schoolinfo.go.kr/openApi.do?apiKey=API_KEY&pbanY=2024&apiType=JSON&pbanScCode=${region}&schulKndCode=${level}&SCHUL_NM=${encodeURIComponent(school)}`;
+  const url = `https://www.schoolinfo.go.kr/openApi.do?apiKey=${apiKey}&pbanY=2024&apiType=JSON&pbanScCode=${region}&schulKndCode=${level}&SCHUL_NM=${encodeURIComponent(school)}`;
 
   try {
     const response = await fetch(url);
