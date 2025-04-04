@@ -1,4 +1,4 @@
-
+학교알리미 API 코드 업데이트 및 오류 처리 추가
 export default async function handler(req, res) {
   const { school, level } = req.query;
 
