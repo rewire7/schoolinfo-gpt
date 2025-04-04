@@ -8,7 +8,8 @@ export default async function handler(req, res) {
     });
   }
 
-  const url = `https://www.schoolinfo.go.kr/openApi.do?apiKey=91464e07fb874c39b7a28ff2356d16b1&apiType=JSON&pbanScCode=${region}&schulKndCode=${level}&SCHUL_NM=${encodeURIComponent(school)}`;
+  const url = `https://www.schoolinfo.go.kr/openApi.do?apiKey=91464e07fb874c39b7a28ff2356d16b1&apiType=JSON&pbanScCode=${region}&schulKndCode=${level}&SCHUL_NM=${encodeURIComponent(school)}&pbanY=2024`;
+
 
   try {
     const response = await fetch(url);
