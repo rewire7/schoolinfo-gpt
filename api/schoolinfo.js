@@ -24,3 +24,4 @@ export default async function handler(req, res) {
     });
   }
 }
+Fix: Add 'year' param to schoolinfo API URL
