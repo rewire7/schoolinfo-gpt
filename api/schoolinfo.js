@@ -6,7 +6,8 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: '학교명과 학교급 코드를 모두 입력해주세요.' });
   }
 
-  const url = `http://www.schoolinfo.go.kr/openApi.do?apiKey=91464e07fb874c39b7a28ff2356d16b1&apiType=0&schulKndCode=${level}&SCHUL_NM=${encodeURIComponent(school)}`;
+  const url = `https://www.schoolinfo.go.kr/openApi.do?apiKey=91464e07fb874c39b7a28ff2356d16b1&apiType=JSON&schulKndCode=${level}&SCHUL_NM=${encodeURIComponent(school)}`;
+
   
   try {
     const response = await fetch(url);
