@@ -1,4 +1,3 @@
-// 학교알리미 API 코드 업데이트 및 오류 처리 추가
 export default async function handler(req, res) {
   const { school, level, region, year } = req.query;
 
@@ -8,8 +7,11 @@ export default async function handler(req, res) {
     });
   }
 
-  const url = `https://www.schoolinfo.go.kr/openApi.do?apiKey=91464e07fb874c39b7a28ff2356d16b1&apiType=JSON&pbanScCode=${region}&schulKndCode=${level}&SCHUL_NM=${encodeURIComponent(school)}&pbanY=${year}`;
-  console.log('[학교알리미 호출 URL]', url); // <- 이 줄 추가
+  const encodedSchool = encodeURIComponent(school);
+  const apiKey = "91464e07fb874c39b7a28ff2356d16b1";
+  const url = `https://www.schoolinfo.go.kr/openApi.do?apiKey=${apiKey}&apiType=JSON&pbanScCode=${region}&schulKndCode=${level}&SCHUL_NM=${encodedSchool}&pbanY=${year}`;
+
+  console.log("[API 호출 URL]", url); // 로그 출력 확인용
 
   try {
     const response = await fetch(url);
